@@ -1,0 +1,13 @@
+development:
+  adapter: postgresql
+  database: fumblrr_development
+  host: localhost
+  encoding: UTF8
+  min_messages: WARNING
+
+test: &test
+  adapter: postgresql
+  database: fumblrr_test
+  host: localhost
+  encoding: UTF8
+  min_messages: WARNING
