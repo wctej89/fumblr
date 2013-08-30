@@ -1,4 +1,4 @@
-require 'Mechanize'
+require 'mechanize'
 
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
