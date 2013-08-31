@@ -1,7 +1,7 @@
 <% @products.each do |product| %>
-  <div class='result_item' style='padding-bottom: 5px; padding-left: 1%; display: none;'>
+  <div class='result_item' style='padding-bottom: 5px; padding-left: 2%; display: none;'>
     <%= image_tag(product.item_image) %>
-    <div style="display: inline-block; position: absolute; margin-top: 19px;">
+    <div style="display: inline-block; position: absolute; margin-top: 19px; padding-left: 1%;">
       <b><%= link_to(product.title, product.item_show_link) %></b><br>
       <%= image_tag(product.stars_link) %><br>
       <%= product.price %><br>

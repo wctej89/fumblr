@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @products = product("food processor")
+    @products = product_scrape(params['query'])
     render :results, layout: false
   end
 end
