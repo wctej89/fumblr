@@ -5,6 +5,7 @@
       <b><%= link_to(product.title, product.item_show_link) %></b><br>
       <%= image_tag(product.stars_link) %><br>
       <%= product.price %><br>
+      <button class='research' value= <%= product.item_show_link %>>Research me</button>
     </div>
   </div>
 <% end %>

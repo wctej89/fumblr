@@ -10,4 +10,9 @@ class ProductsController < ApplicationController
     @products = product_scrape(params['query'])
     render :results, layout: false
   end
+
+  def research
+    review_scrape(params[:link])
+    render text: "yipeee"
+  end
 end

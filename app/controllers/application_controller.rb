@@ -45,7 +45,7 @@ class ApplicationController < ActionController::Base
       if title.length > 60
        title[61..-1]=''
        title[-3..-1]='...'
-      end
+     end
 
      item_image = images[i].children.children[1].attributes['src'].value
      
@@ -61,7 +61,33 @@ class ApplicationController < ActionController::Base
      puts "XXXXXXXXXXXXXXX"
    end
    results
-    # results = Product.all.limit(5)
+    # results = Product.limit(5)
+  end
+
+  def review_scrape(link)
+    agent = Mechanize.new
+    page  = agent.get(link)
+
+    star_number_class = agent.page.parser.css('.acrStars')[0].children[0].attributes['class'].value
+    number_of_reviews = agent.page.parser.css('.acrCount')[0].children.children.text
+  #user quotes
+    quote_length = agent.page.parser.css('#quotesContainer > div > div').length
+    3.times do |i|
+      quote = agent.page.parser.css("#advice-quote-#{i.to_s} > span")  #advice-quote-0 is what changes
+      link_to_quote = quote.css('a')[0].attributes['href'].value 
+      first_half = quote.css('a > span')[0].children.text
+      second_half = quote.css('span > span > a')[0].children.text.strip
+      quote_text = first_half + second_half
+      quote_author = quote[1].css('span > span')[0].children.text
+      quote_similar = quote[1].css('span > span')[2].children.text
+
+      #user helpful reviews
+      title_area = agent.page.parser.css('#revMH > .mb30 > div')[i] #change 0 to get others
+      user_star = title_area.css('.ttl').children[0].attributes['class'].value
+      user_title = title_area.css('.ttl > a > strong')[0].text
+      review_text = title_area.css('.MHRHead').to_html
+      puts "Review: #{review_text}"
+    end
   end
 
   def get_price(item)
@@ -73,5 +99,25 @@ class ApplicationController < ActionController::Base
     price
   end
 end
+
+
+
+# #customerReviews
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

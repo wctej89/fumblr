@@ -11,5 +11,14 @@ $(document).ready(function() {
       $('.results').html(response);
       $('.result_item').fadeIn(1000);
     })
-  })
+  });
+  $('.results').on('click', '.research', function() {
+    $.ajax({
+      method: 'POST',
+      url: '/products/research',
+      data: {"link": $(this).attr('value')}
+    }).success(function(response) {
+      console.log('holla');
+    })
+  });
 })
