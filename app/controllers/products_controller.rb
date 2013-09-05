@@ -12,7 +12,7 @@ class ProductsController < ApplicationController
   end
 
   def research
-    review_scrape(params[:link])
+    user_review_scrape(params[:link])
     render text: "yipeee"
   end
 end

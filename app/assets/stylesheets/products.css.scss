@@ -1,6 +1,58 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+  box-sizing: border-box;
+}
+
+.modal-link {
+  cursor: pointer;
+}
+
+.modal-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgba(0,0,0,.5);
+  width: 100%;
+  display: none;
+  z-index: 1000;
+}
+
+.modal-window {
+  position: absolute;
+  margin: 10px;
+  max-width: 500px;
+  padding: 40px;
+  background: #FFF;
+  top: 0;
+  display: none;
+  z-index: 2000;
+  border-radius: 2px;
+}
+
+h1 {
+  display: inline-block;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  color: #333;
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 1.1;
+  position: fixed;
+  right: 5%;
+  top: 36%;
+  z-index: -1;
+}
+
+#modaltext {
+  display: inline-block;
+  font-family: 'Lato', sans-serif;
+  color: #555252;
+  font-size: 36px;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
 input[type=text],
 input[type=email],
 textarea {
@@ -102,11 +154,11 @@ button:hover {
   margin-left: 10%;
   height: 620px;
   font-family: 'Lato', sans-serif;
-  border-left: 2px solid rgb(143, 143, 143);
+  border-left: 2px solid rgba(247, 240, 240, 1);
   box-shadow: 3px 5px 5px rgba(19, 18, 18, 0.12);
-  border-right: 2px solid rgb(143, 143, 143);
+  /*border-right: 2px solid rgb(143, 143, 143);*/
   border-radius: 3px;
-  border-bottom: 2px solid rgb(143, 143, 143);
+  /*border-bottom: 2px solid rgb(143, 143, 143);*/
   font-size: 1.1em;
   display: none;
   background-color: white;
@@ -118,8 +170,11 @@ color: #004b91;
 }
 
 body {
-  background-color: #ecf0f1;
+  background-image: url(https://s3-us-west-1.amazonaws.com/fumblr/research-icon1.jpg);
+  background-repeat: no-repeat;
+  width: 100%;
 }
+
 a:hover {
   color: #C60;
 }
@@ -158,3 +213,109 @@ background: url(amazon_graphics.png) no-repeat;
 .s_starBig_4_0 { background-position: -22px -259px; width: 95px;height: 18px; }
 .s_starBig_4_5 { background-position: -3px  -279px; width: 95px;height: 18px; }
 .s_starBig_5_0 { background-position: -3px  -259px; width: 95px;height: 18px; }
+
+/* 
+ * This is a nice full CSS3 loader made with LESS 
+*/
+/* u can custom almost everything u need with these variables just bellow */
+/* but from here u'll have to understand what u'r dealing with */
+/* mixins */
+/* animations */
+.spin {
+  -webkit-animation: spin 750ms infinite linear;
+  -moz-animation: spin 750ms infinite linear;
+  animation: spin 750ms infinite linear;
+}
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes spin {
+  to {
+    -moz-transform: rotate(360deg);
+  }
+}
+.rspin {
+  -webkit-animation: rspin 2250ms infinite linear;
+  -moz-animation: rspin 2250ms infinite linear;
+  animation: rspin 2250ms infinite linear;
+}
+@-webkit-keyframes rspin {
+  to {
+    -webkit-transform: rotate(-360deg);
+  }
+}
+@-moz-keyframes rspin {
+  to {
+    -moz-transform: rotate(-360deg);
+  }
+}
+/* let's style that thing */
+.loader {
+  background-color: #eeeeee;
+  border-radius: 100%;
+  position: relative;
+  height: 75px;
+  width: 75px;
+  overflow: hidden;
+}
+.loader .c {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -34% 0 0 -34%;
+  width: 68%;
+  height: 68%;
+  background-color: #ffffff;
+  border-radius: 100%;
+  z-index: 3;
+}
+.loader .d {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.loader .d .e {
+  z-index: 10;
+  position: absolute;
+  top: 1%;
+  left: 50%;
+  margin: 0 0 0 -7.5px;
+  border-top: 15px solid #ffae00;
+  border-left: 4.5px solid transparent;
+  border-right: 4.5px solid transparent;
+  height: 0;
+  width: 15px;
+  -webkit-transform: rotate(10deg);
+  -moz-transform: rotate(10deg);
+  border-radius: 5px 5px 0 0;
+}
+.loader .r {
+  z-index: 2;
+  position: absolute;
+  left: 50%;
+  top: -1px;
+  bottom: -1px;
+  margin-left: -3.75px;
+  background-color: #ffffff;
+  width: 7.5px;
+}
+.loader .r1 {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+}
+.loader .r2 {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+}
+.loader .r3 {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+}
+.loader .r4 {
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+}
