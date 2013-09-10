@@ -22,7 +22,6 @@ class ApplicationController < ActionController::Base
 
    #    puts "LOOK AT ME #{item.children.children.length}"
    #    item_div_length = item.children.children.length
-   #    debugger
    #    if item.children.children.css('a')[3].children[0].text != "" 
    #      item_div_length -= 1 
    #    else

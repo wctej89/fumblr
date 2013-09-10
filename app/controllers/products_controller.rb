@@ -12,7 +12,9 @@ class ProductsController < ApplicationController
   end
 
   def research
-    user_review_scrape(params[:link])
-    render text: "yipeee"
+    # user_review_scrape(params[:link])
+    sleep(3)
+    render :reviews, layout: false
   end
+
 end

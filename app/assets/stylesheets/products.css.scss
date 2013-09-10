@@ -1,9 +1,137 @@
 // Place all the styles related to the products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.review-pane {
+  width: 100%;
+  background-color: white;
+  height: 670px;
+  display: none;
+  margin-top: 1%;
+}
+
+ul
+{
+margin:0px;
+padding:0px;
+list-style-type:none;
+-webkit-backface-visibility: hidden; backface-visibility: hidden;  
+}
+
+.sidebar-link {
+  font-family: 'Lato';
+  display:block;
+position:absolute;
+float:left;
+font-family:arial;
+color:#fff;
+text-decoration:none;
+width:100%;
+height:70px;
+text-align:center;
+}
+.sidebar-link:hover {
+  color: white;
+}
+
+.var_nav {
+position: relative;
+background: #FFF;
+width: 18%;
+height: 50px;
+margin-bottom: 5px;
+border-radius: 1px;
+}
+.link_bg
+{
+ width: 70px;
+height: 50px;
+position: absolute;
+background: #ffae00;
+color: #fff;
+z-index: 2;
+}
+.link_bg i
+{
+ position:relative;
+}
+.link_title
+{
+position:absolute;
+width:100%;
+z-index:3;
+color:#fff;
+}
+.link_title:hover .icon
+{
+-webkit-transform:rotate(360deg);
+-moz-transform:rotate(360deg);
+-o-transform:rotate(360deg);
+-ms-transform:rotate(360deg);
+transform:rotate(360deg);  
+}
+.var_nav:hover .link_bg
+{
+width:100%;
+background:#3498db;
+-webkit-transition: all 0.3s ease-in-out;
+-moz-transition: all 0.3s ease-in-out;
+-o-transition: all 0.3s ease-in-out;
+-ms-transition: all 0.3s ease-in-out;
+transition: all 0.3s ease-in-out;  
+}
+.var_nav:hover a
+{
+font-weight:bold;
+-webkit-transition:all .5s ease-in-out;
+-moz-transition:all .5s ease-in-out; 
+-o-transition:all .5s ease-in-out; 
+-ms-transition:all .5s ease-in-out;
+ transition:all .5s ease-in-out;  
+}
+.icon
+{
+position:relative;
+width:70px;
+height:70px;
+text-align:center;
+color: white;
+-webkit-transition:all .5s ease-in-out;
+-moz-transition:all .5s ease-in-out; 
+-o-transition:all .5s ease-in-out; 
+-ms-transition:all .5s ease-in-out;   
+float:left;
+transition:all .5s ease-in-out;   
+float:left;  
+}
+.icon i{top:9px;position:relative;}
+
+.sidebar-text
+{
+margin-top:17px;
+display:block;
+margin-right: -65px;
+}
+/*.xyz {
+  width: 10%;
+  height: 100px;
+  margin-bottom: 5px;
+  box-shadow: 3px 5px 5px rgba(19, 18, 18, 0.2);
+  border-radius: 2px;
+}
+
+.xyz:hover {
+  border-right: 2px solid #ffae00;
+}
+
+i {
+  font-size: 80px;
+  margin-left: 20%;
+}
+
 * {
   box-sizing: border-box;
-}
+}*/
 
 .modal-link {
   cursor: pointer;
@@ -99,10 +227,6 @@ textarea:focus {
   height: 45px;
 }
 
-i {
-  font-size: 28px;
-  color: rgb(88, 88, 88);
-}
 button {
   background: #ffae00;
   text-transform: uppercase;
